@@ -86,7 +86,7 @@ client.on("ready", () => {
     
 
 
-        // End of discord crypto Function //////////////////
+        
       }
   
     }
