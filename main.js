@@ -1,10 +1,12 @@
 require("dotenv").config();
-
 const Discord = require("discord.js");
+
 
 const CoinmarketcapAPI = process.env.CMC;
 const DiscordApi = process.env.DISCORD;
 const CurrencyApi = process.env.CURRENCY;
+
+
 
 /*
 const express = require("express");
@@ -13,6 +15,8 @@ const port = 3000;
 app.get('/', (req, res)=> res.send(""));
 app.listen(port, ()=> console.log('Listening'));
 */
+
+
 
 
 const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES"]});
@@ -45,6 +49,7 @@ client.on("ready", () => {
        
         let usd = (JSON.parse(response).data.EUR);
     
+        //let ticker = "VRA";
         const axios = require('axios');
         
         let response2 = null;
@@ -57,12 +62,10 @@ client.on("ready", () => {
             });
           } catch(ex) {
             response2 = null;
-            // error
             console.log(ex);
             reject(ex);
           }
           if (response2) {
-            // success
             const json = response2.data;
             
             
@@ -70,7 +73,6 @@ client.on("ready", () => {
             console.log(price);
             msg.reply("€" + price);
           
-            
           }
         });
         
@@ -79,6 +81,9 @@ client.on("ready", () => {
       console.log(error)
       })
     
+
+
+        // End of discord crypto Function //////////////////
       }
   
     }
@@ -86,9 +91,11 @@ client.on("ready", () => {
   })
   
 
+
+
   client.on("message", msg => {
     if (msg.content.toLowerCase() === "best girl") {
-      msg.reply("Nino!");
+      msg.reply('https://cdn.myanimelist.net/images/characters/15/437486.jpg');
     }
   })
     
