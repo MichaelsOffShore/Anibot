@@ -6,8 +6,6 @@ const CoinmarketcapAPI = process.env.CMC;
 const DiscordApi = process.env.DISCORD;
 const CurrencyApi = process.env.CURRENCY;
 
-
-
 /*
 const express = require("express");
 const app = express();
@@ -83,7 +81,7 @@ client.on("ready", () => {
     
 
 
-        // End of discord crypto Function //////////////////
+        // End of discord crypto Function 
       }
   
     }
