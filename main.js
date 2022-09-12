@@ -84,14 +84,6 @@ client.on("ready", () => {
     }
   })
     
-
-  client.on("messageCreate", msg => {
-    if (msg.content.toLowerCase() === "!bored") {
-    // Bored api has no ssl certificate
-    msg.reply("Under Maintainance...");
-    }
-  })
- 
   client.on("messageCreate", msg => {
     if (msg.content === "!go") {
     client.off;
