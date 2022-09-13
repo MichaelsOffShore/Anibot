@@ -120,6 +120,31 @@ const job = schedule.scheduleJob('*/5 * * * *', function(){
     }
   })
 
+  client.on("messageCreate", msg => {
+    if (msg.content === "!botd") {
+    
+      axios.get("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
+      .then(allBOTD => {
+        let numOfBOTD = allBOTD.data.length;
+
+        axios.get("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/" + getRandomInt(numOfBOTD))
+        .then(oneBOTD => {
+          let botd = oneBOTD.data;
+          let name = botd.name;
+          let price = botd.price;
+          msg.reply("-Burger of The Day-\n"+name+"\n"+price);
+  
+           })
+        .catch((error) => {
+            console.log('error ' + error);
+         });
+         })
+      .catch((error) => {
+          console.log('error ' + error);
+       });
+  }
+  })
+
   // Get a random number
 function getRandomInt(max) {
   let randNum = Math.floor(Math.random() * max);
