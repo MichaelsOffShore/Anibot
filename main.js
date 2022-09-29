@@ -121,7 +121,7 @@ const job = schedule.scheduleJob('*/5 * * * *', function(){
   })
 
   client.on("messageCreate", msg => {
-    if (msg.content === "!botd") {
+    if (msg.content === "botd") {
     
       axios.get("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then(allBOTD => {
@@ -144,7 +144,6 @@ const job = schedule.scheduleJob('*/5 * * * *', function(){
        });
   }
   })
-
   // Get a random number
 function getRandomInt(max) {
   let randNum = Math.floor(Math.random() * max);
@@ -170,4 +169,3 @@ async function getCryptocurrencyPrice(ticker){
 }
 
 client.login(DiscordApi);
-
