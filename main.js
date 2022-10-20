@@ -108,11 +108,6 @@ const job = schedule.scheduleJob('*/5 * * * *', function(){
     }
 })
     
-  client.on("messageCreate", msg => {
-    if (msg.content.toLowerCase() === "best girl") {
-      msg.reply('https://cdn.myanimelist.net/images/characters/15/437486.jpg');
-    }
-  })
     
   client.on("messageCreate", msg => {
     if (msg.content === "!go") {
